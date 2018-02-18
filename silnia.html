@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Policzmy silnię z 'n'</title>
+    </head>
+    <body>
+        <h1>Chcesz policzyć silnię z 'n'?</h1> 
+        <h3>Wciśnij guzik vvv</h3>
+        <button onclick="silniaIter()">Iteracyjnie</button>
+        <button onclick="silniaRek()">Rekurencyjnie</button>
+        <script>
+            function silniaIter() {
+                var liczba = prompt("Podaj liczbę naturalną");
+                var wynik = 1
+                for (i=1;i<=liczba;i++) {
+                wynik *= i;
+                }
+                alert(wynik);
+            }
+            function silniaRek() {
+                var liczba = prompt("Podaj liczbę naturalną");
+                alert(theRealSilniaRek(liczba));   
+            }
+            function theRealSilniaRek(liczba) {
+                if ( liczba == 1) {
+                    return 1;
+                } else {
+                return liczba * theRealSilniaRek( liczba - 1 );
+                }
+            }
+            
+        </script>
+    </body>
+</html>
